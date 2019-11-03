@@ -10,7 +10,8 @@ function getTodos() {
     .get("https://jsonplaceholder.typicode.com/todos", {
       params: {
         _limit: 5
-      }
+      },
+      timeout: 5000
     })
     .then(showOutput)
     .catch(err => console.error(err))
