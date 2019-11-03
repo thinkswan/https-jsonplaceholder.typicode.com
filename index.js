@@ -70,6 +70,25 @@ function getData() {
 // CUSTOM HEADERS
 function customHeaders() {
   console.log("Custom Headers")
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "some-token"
+    }
+  }
+
+  axios
+    .post(
+      "https://jsonplaceholder.typicode.com/todos",
+      {
+        title: "New todo",
+        completed: false
+      },
+      config
+    )
+    .then(showOutput)
+    .catch(err => console.error(err))
 }
 
 // TRANSFORMING REQUESTS & RESPONSES
