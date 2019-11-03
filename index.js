@@ -28,6 +28,16 @@ function addTodo() {
 // PUT/PATCH REQUEST
 function updateTodo() {
   console.log("PUT/PATCH Request")
+
+  // PUT overwrites the object, but PATCH only modifies to specified
+  // params
+  axios
+    .put("https://jsonplaceholder.typicode.com/todos/1", {
+      title: "Updated todo",
+      completed: true
+    })
+    .then(showOutput)
+    .catch(err => console.error(err))
 }
 
 // DELETE REQUEST
