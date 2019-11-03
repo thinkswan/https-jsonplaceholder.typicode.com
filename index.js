@@ -183,6 +183,11 @@ axios.interceptors.request.use(
 )
 
 // AXIOS INSTANCES
+const axiosInstance = axios.create({
+  baseURL: "https://jsonplaceholder.typicode.com"
+  // Other custom settings
+})
+// axiosInstance.get("/comments").then(showOutput)
 
 // Show output in browser
 function showOutput(res) {
