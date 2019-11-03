@@ -146,6 +146,24 @@ function errorHandling() {
 // CANCEL TOKEN
 function cancelToken() {
   console.log("Cancel Token")
+
+  const source = axios.CancelToken.source()
+
+  axios
+    .get("https://jsonplaceholder.typicode.com/todos", {
+      params: {
+        _limit: 5
+      },
+      cancelToken: source.token
+    })
+    .then(showOutput)
+    .catch(err => {
+      if (axios.isCancel(err)) {
+        console.log("Request canceled", err.message)
+      }
+    })
+
+  source.cancel("Request cancelled")
 }
 
 // INTERCEPTING REQUESTS & RESPONSES
