@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "http-server -o"
+    "start": "live-server"
   },
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "live-server": "^1.2.1"
   }
 }
