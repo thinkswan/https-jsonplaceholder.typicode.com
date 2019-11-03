@@ -2,5 +2,11 @@
   "name": "js-axios-examples",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server -o"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
 }
